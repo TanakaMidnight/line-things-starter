@@ -214,7 +214,7 @@ function liffConnectToDevice(device) {
         ledState = false;
         // Reset UI elements
         uiToggleLedButton(false);
-        uiToggleStateButton(false);
+        //uiToggleStateButton(false);
 
         // Try to reconnect
         initializeLiff();
@@ -280,14 +280,7 @@ function liffGetButtonStateCharacteristic(characteristic) {
     .then(() => {
       characteristic.addEventListener("characteristicvaluechanged", e => {
         const val = new Uint8Array(e.target.value.buffer)[0];
-        if (val > 0) {
-          // press
-          uiToggleStateButton(true);
-        } else {
-          // release
-          uiToggleStateButton(false);
-          uiCountPressButton();
-        }
+        uiToggleStateButton(val);
       });
     })
     .catch(error => {
