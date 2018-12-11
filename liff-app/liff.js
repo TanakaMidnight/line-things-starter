@@ -56,6 +56,7 @@ function uiCountPressButton() {
 function uiToggleStateButton(pressed) {
   const el = document.getElementById("btn-state");
   console.log(pressed);
+  alert(pressed);
   el.innerText = pressed;
   if (pressed) {
     el.classList.add("pressed");
