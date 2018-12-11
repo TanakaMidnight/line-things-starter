@@ -59,10 +59,10 @@ function uiToggleStateButton(pressed) {
   el.innerText = pressed;
   if (pressed) {
     el.classList.add("pressed");
-    el.innerText = "Pressed";
+    //el.innerText = "Pressed";
   } else {
     el.classList.remove("pressed");
-    el.innerText = "Released";
+    //el.innerText = "Released";
   }
 }
 
